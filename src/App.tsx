@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import axios from 'axios'
 import Uploader from './components/uploader/uploader'
+import Wisywg from './components/wisywg/wisywg'
 
 class App extends Component<{}, any> {
   constructor(props) {
@@ -52,6 +53,7 @@ class App extends Component<{}, any> {
 
     return (
       <>
+        <Wisywg />
         <Uploader objId = "123" />
         {/* <button>{ artifact }</button> */}
         {/* <div dangerouslySetInnerHTML={{__html: '<h1>HELLO, WORLD</h1>'}} /> */}
