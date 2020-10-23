@@ -58,7 +58,7 @@ class Uploader extends Component<any, any> {
             })
         })
 
-        Promise.all(requests).then(() => {
+        Promise.all(requests).then(async () => {
             const config = {
                 headers: {
                     'Content-Type': 'application/json;charset=UTF-8',
@@ -66,7 +66,7 @@ class Uploader extends Component<any, any> {
                 }
             }
     
-            axios.post('http://localhost:5000/artifact', {objID: objId, imageUrl: this.state.imagesURL, description: this.state.description}, config).then(res => {
+            await axios.post('http://localhost:5000/artifact', {objID: objId, imageUrl: this.state.imagesURL, description: this.state.description}, config).then(res => {
                 console.log(res)
             }).catch(err => {
                 console.log("Error uploading images:  " + err)
