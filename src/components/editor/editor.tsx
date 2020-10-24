@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { runInThisContext } from 'vm'
 
 
 class Editor extends Component<any, any> {
@@ -23,10 +24,12 @@ class Editor extends Component<any, any> {
 
     deleteArtifact = async (e) => {
         console.log(this.state.objId)
-        const res = await axios.delete('http://localhost:5000/artifact/',  { 
-            data: {
-                 objId: this.state.objId
-                } 
+        const res = await axios.delete('http://localhost:5000/artifact?id=' + this.state.objId,
+        {
+            headers : {
+                'Content-Type': 'application/json;charset=UTF-8',
+                "Access-Control-Allow-Origin": "*",
+            }
         })
         console.log(res)
     }
