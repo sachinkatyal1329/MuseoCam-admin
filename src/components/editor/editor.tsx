@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { runInThisContext } from 'vm'
 
 
 class Editor extends Component<any, any> {
     constructor(props) {
         super(props)
-        this.state =  {
+        this.state =  { 
             objId: undefined,
             description: undefined,
         }

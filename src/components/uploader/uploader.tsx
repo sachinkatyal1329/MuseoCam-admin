@@ -66,7 +66,7 @@ class Uploader extends Component<any, any> {
                 }
             }
     
-            await axios.post('http://localhost:5000/artifact', {objID: objId, imageUrl: this.state.imagesURL, description: this.state.description}, config).then(res => {
+            await axios.post('http://localhost:5000/artifact', {objId: objId, imageUrl: this.state.imagesURL, description: this.state.description}, config).then(res => {
                 console.log(res)
             }).catch(err => {
                 console.log("Error uploading images:  " + err)
