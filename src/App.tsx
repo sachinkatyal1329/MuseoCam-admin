@@ -54,6 +54,7 @@ class App extends Component<{}, any> {
 
     return (
       <>
+        <Wisywg />
         {/* <Wisywg /> */}
         <Uploader objId = "123" />
         {/* <button>{ artifact }</button> */}
